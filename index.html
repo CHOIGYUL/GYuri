@@ -33,6 +33,14 @@ body{
   word-break:keep-all;
   overflow-wrap:break-word;
 }
+@media print{
+  .proj, .pub, .tl-item, .pillar, .edu-item, .profile-row, .statbar,
+  .gradebook-row, .datatable-row, .sec-head{
+    page-break-inside:avoid;
+    break-inside:avoid;
+  }
+  .hero{ page-break-after:avoid; }
+}
 ::selection{ background:var(--navy-soft); color:var(--navy); }
 .mono{ font-family:'IBM Plex Mono',monospace; }
 .wrap{ max-width:880px; margin:0 auto; padding:0 32px; }
@@ -107,7 +115,7 @@ section.alt .pillar{ background:#FDFDFE; }
 /* career timeline */
 .tl-item{ display:grid; grid-template-columns:130px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid var(--rule); }
 .tl-item:first-child{ border-top:1px solid var(--rule); }
-.tl-item .period{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-faint); padding-top:2px; }
+.tl-item .period{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-faint); padding-top:2px; white-space:nowrap; }
 .tl-item h4{ font-size:16.5px; font-weight:700; margin:0 0 8px; }
 .tl-item p{ font-size:14px; color:var(--ink-soft); margin:0 0 10px; max-width:600px; }
 .pillrow{ display:flex; flex-wrap:wrap; gap:8px; }
@@ -121,8 +129,8 @@ section.alt .proj{ background:#FFFFFF; }
 .proj-head h3{ font-size:17.5px; font-weight:700; margin:0; }
 .tasklines{ margin:0 0 16px; }
 .taskline{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-faint); padding:5px 0 5px 12px; border-left:2px solid var(--rule); margin-bottom:2px; }
-.taskline b{ color:var(--ink-soft); font-weight:500; }
-.proj-head .client{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-faint); }
+.taskline b{ color:var(--ink-soft); font-weight:500; white-space:nowrap; }
+.proj-head .client{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-faint); white-space:nowrap; }
 .proj-body{ padding:22px 26px; }
 .proj-body p{ font-size:14px; color:var(--ink-soft); margin:0 0 14px; }
 .proj-body ul{ margin:0 0 16px; padding-left:18px; font-size:13.5px; color:var(--ink-soft); }
@@ -151,9 +159,9 @@ section.alt .proj{ background:#FFFFFF; }
 @media (max-width:600px){ .datatable-row{ grid-template-columns:1fr repeat(3,64px); font-size:11.5px; } }
 
 .pub-group-title{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.05em; margin:32px 0 4px; }
-.pub{ display:grid; grid-template-columns:56px 1fr; gap:16px; padding:16px 0; border-bottom:1px solid var(--rule); }
+.pub{ display:grid; grid-template-columns:118px 1fr; gap:16px; padding:16px 0; border-bottom:1px solid var(--rule); }
 .pub:first-of-type{ border-top:1px solid var(--rule); }
-.pub .yr{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-faint); padding-top:2px; }
+.pub .yr{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-faint); padding-top:2px; white-space:nowrap; }
 .pub .ttl{ font-size:14px; font-weight:500; }
 .pub .venue2{ font-size:12px; color:var(--ink-faint); margin-top:3px; }
 .pub .desc{ font-size:13px; color:var(--ink-soft); margin-top:6px; }
@@ -364,26 +372,26 @@ footer h2 em{ font-style:normal; color:var(--navy); }
   <div class="wrap">
     <div class="sec-head"><span class="sec-idx mono">04</span><span class="sec-title">전체 프로젝트 내역</span><span class="sec-line"></span></div>
     <div class="pub-list">
-      <div class="pub"><div class="yr mono">23.03–05</div><div><div class="ttl">초거대 언어 모델 학습용 프롬프트 데이터 구축 연구</div><div class="venue2">NC소프트</div></div></div>
-      <div class="pub"><div class="yr mono">23.03–12</div><div><div class="ttl">신문 텍스트 기반 어휘 자원 구축 및 AI 분석기법 연구</div><div class="venue2">미래과학아카데미</div></div></div>
-      <div class="pub"><div class="yr mono">23.05–12</div><div><div class="ttl">국어능력 진단체계 활용 방안 연구</div><div class="venue2">국립국어원 · 테디썸</div></div></div>
-      <div class="pub"><div class="yr mono">23.07–12</div><div><div class="ttl">초거대 언어모델 기반 대화 데이터 고도화 및 품질 평가</div><div class="venue2">NC소프트</div></div></div>
-      <div class="pub"><div class="yr mono">23.10–24.03</div><div><div class="ttl">AI 응답 결과에 대한 품질 평가 데이터 검수</div><div class="venue2">심심이(주)</div></div></div>
-      <div class="pub"><div class="yr mono">23.10–25.09</div><div><div class="ttl">인공지능의 한국어 능력 평가를 위한 한국형 LLM 벤치마크 개발 (1·2차)</div><div class="venue2">연세대학교 (인문한국플러스)</div></div></div>
-      <div class="pub"><div class="yr mono">23.12–24.07</div><div><div class="ttl">언어 모델 작문 평가 지침 설계 및 데이터셋 구축</div><div class="venue2">NC소프트</div></div></div>
-      <div class="pub"><div class="yr mono">24.04–12</div><div><div class="ttl">NR-DATA 프로젝트</div><div class="venue2">미래과학아카데미</div></div></div>
-      <div class="pub"><div class="yr mono">24.01–25.12</div><div><div class="ttl">2024–2025 인공지능(AI) 말평 과제 구축 및 운영</div><div class="venue2">국립국어원</div></div></div>
-      <div class="pub"><div class="yr mono">24.06–12</div><div><div class="ttl">생성형 AI 신뢰성 평가의 실용적 접근 방안 연구 추진</div><div class="venue2">한국정보통신기술협회</div></div></div>
-      <div class="pub"><div class="yr mono">24.12</div><div><div class="ttl">AI 안정성 평가를 위한 해외 데이터셋 현지화 방안 수립</div><div class="venue2">한국정보통신기술협회</div></div></div>
-      <div class="pub"><div class="yr mono">24.09–</div><div><div class="ttl">20세기 초 한국어 학습서 아카이브 구축</div><div class="venue2">인문사회연구소</div></div></div>
-      <div class="pub"><div class="yr mono">25.05–12</div><div><div class="ttl">NR-DATA-2 프로젝트</div><div class="venue2">미래과학아카데미</div></div></div>
-      <div class="pub"><div class="yr mono">25.04–12</div><div><div class="ttl">범죄 의심 정보 내 개인정보 비식별화 기술 개발 (1/4)</div><div class="venue2">정보통신기획평가원</div></div></div>
-      <div class="pub"><div class="yr mono">25.08–12</div><div><div class="ttl">산업 AI 전환을 위한 확장 가능한 멀티모달 생성용 파운데이션 모델 데이터 구축 (Kai 프로젝트)</div><div class="venue2">한국지능정보사회진흥원</div></div></div>
-      <div class="pub"><div class="yr mono">25.12–26.01</div><div><div class="ttl">금융 특화 모델의 성능 평가를 위한 벤치마크 데이터셋 기획 및 설계</div><div class="venue2">테디썸</div></div></div>
-      <div class="pub"><div class="yr mono">26.03–10</div><div><div class="ttl">범죄 의심 정보 내 개인정보 비식별화 기술 개발 (2/4)</div><div class="venue2">정보통신기획평가원</div></div></div>
-      <div class="pub"><div class="yr mono">26.03–10</div><div><div class="ttl">멀티모달형 AI 기반 개인정보 탐지·추적 및 비식별화 기술 개발 (2/3)</div><div class="venue2">한국인터넷진흥원</div></div></div>
-      <div class="pub"><div class="yr mono">26.03–12</div><div><div class="ttl">2026년 인공지능 말평 운영 및 연계 행사 개최</div><div class="venue2">국립국어원 · 테디썸</div></div></div>
-      <div class="pub"><div class="yr mono">26.04–12</div><div><div class="ttl">개인 맞춤형 국어생활종합상담 서비스를 위한 한국어 지식 연계 AI 에이전트 개발 (1/2단계)</div><div class="venue2">한국콘텐츠진흥원</div></div></div>
+      <div class="pub"><div class="yr mono">2023.03–2023.05</div><div><div class="ttl">초거대 언어 모델 학습용 프롬프트 데이터 구축 연구</div><div class="venue2">NC소프트</div></div></div>
+      <div class="pub"><div class="yr mono">2023.03–2023.12</div><div><div class="ttl">신문 텍스트 기반 어휘 자원 구축 및 AI 분석기법 연구</div><div class="venue2">미래과학아카데미</div></div></div>
+      <div class="pub"><div class="yr mono">2023.05–2023.12</div><div><div class="ttl">국어능력 진단체계 활용 방안 연구</div><div class="venue2">국립국어원 · 테디썸</div></div></div>
+      <div class="pub"><div class="yr mono">2023.07–2023.12</div><div><div class="ttl">초거대 언어모델 기반 대화 데이터 고도화 및 품질 평가</div><div class="venue2">NC소프트</div></div></div>
+      <div class="pub"><div class="yr mono">2023.10–2024.03</div><div><div class="ttl">AI 응답 결과에 대한 품질 평가 데이터 검수</div><div class="venue2">심심이(주)</div></div></div>
+      <div class="pub"><div class="yr mono">2023.10–2025.09</div><div><div class="ttl">인공지능의 한국어 능력 평가를 위한 한국형 LLM 벤치마크 개발 (1·2차)</div><div class="venue2">연세대학교 (인문한국플러스)</div></div></div>
+      <div class="pub"><div class="yr mono">2023.12–2024.07</div><div><div class="ttl">언어 모델 작문 평가 지침 설계 및 데이터셋 구축</div><div class="venue2">NC소프트</div></div></div>
+      <div class="pub"><div class="yr mono">2024.04–2024.12</div><div><div class="ttl">NR-DATA 프로젝트</div><div class="venue2">미래과학아카데미</div></div></div>
+      <div class="pub"><div class="yr mono">2024.01–2025.12</div><div><div class="ttl">2024–2025 인공지능(AI) 말평 과제 구축 및 운영</div><div class="venue2">국립국어원</div></div></div>
+      <div class="pub"><div class="yr mono">2024.06–2024.12</div><div><div class="ttl">생성형 AI 신뢰성 평가의 실용적 접근 방안 연구 추진</div><div class="venue2">한국정보통신기술협회</div></div></div>
+      <div class="pub"><div class="yr mono">2024.12</div><div><div class="ttl">AI 안정성 평가를 위한 해외 데이터셋 현지화 방안 수립</div><div class="venue2">한국정보통신기술협회</div></div></div>
+      <div class="pub"><div class="yr mono">2024.09–</div><div><div class="ttl">20세기 초 한국어 학습서 아카이브 구축</div><div class="venue2">인문사회연구소</div></div></div>
+      <div class="pub"><div class="yr mono">2025.05–2025.12</div><div><div class="ttl">NR-DATA-2 프로젝트</div><div class="venue2">미래과학아카데미</div></div></div>
+      <div class="pub"><div class="yr mono">2025.04–2025.12</div><div><div class="ttl">범죄 의심 정보 내 개인정보 비식별화 기술 개발 (1/4)</div><div class="venue2">정보통신기획평가원</div></div></div>
+      <div class="pub"><div class="yr mono">2025.08–2025.12</div><div><div class="ttl">산업 AI 전환을 위한 확장 가능한 멀티모달 생성용 파운데이션 모델 데이터 구축 (Kai 프로젝트)</div><div class="venue2">한국지능정보사회진흥원</div></div></div>
+      <div class="pub"><div class="yr mono">2025.12–2026.01</div><div><div class="ttl">금융 특화 모델의 성능 평가를 위한 벤치마크 데이터셋 기획 및 설계</div><div class="venue2">테디썸</div></div></div>
+      <div class="pub"><div class="yr mono">2026.03–2026.10</div><div><div class="ttl">범죄 의심 정보 내 개인정보 비식별화 기술 개발 (2/4)</div><div class="venue2">정보통신기획평가원</div></div></div>
+      <div class="pub"><div class="yr mono">2026.03–2026.10</div><div><div class="ttl">멀티모달형 AI 기반 개인정보 탐지·추적 및 비식별화 기술 개발 (2/3)</div><div class="venue2">한국인터넷진흥원</div></div></div>
+      <div class="pub"><div class="yr mono">2026.03–2026.12</div><div><div class="ttl">2026년 인공지능 말평 운영 및 연계 행사 개최</div><div class="venue2">국립국어원 · 테디썸</div></div></div>
+      <div class="pub"><div class="yr mono">2026.04–2026.12</div><div><div class="ttl">개인 맞춤형 국어생활종합상담 서비스를 위한 한국어 지식 연계 AI 에이전트 개발 (1/2단계)</div><div class="venue2">한국콘텐츠진흥원</div></div></div>
     </div>
   </div>
 </section>
@@ -585,7 +593,7 @@ footer h2 em{ font-style:normal; color:var(--navy); }
 
 <footer id="contact">
   <div class="wrap">
-    <h2>새로운 팀에서<br><em>데이터와 언어</em>를 잇겠습니다.</h2>
+    <h2><em>언어와 기술</em>을 연결하겠습니다.</h2>
     <p style="color:var(--ink-soft); max-width:520px; font-size:14.5px;">
       정규직 · 서울/경기 전지역 근무 희망 · AI 엔지니어 직무
     </p>
