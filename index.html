@@ -243,7 +243,7 @@ footer h2 em{ font-style:normal; color:var(--navy); }
     </p>
     <div class="statbar">
       <div class="stat"><div class="num">박사</div><div class="lbl">언어정보학(전산언어학) · 연세대</div></div>
-      <div class="stat"><div class="num">3년 7개월</div><div class="lbl">LLM 데이터·모델 실무 경력</div></div>
+      <div class="stat"><div class="num" id="career-duration">3년 7개월</div><div class="lbl">LLM 데이터·모델 실무 경력</div></div>
       <div class="stat"><div class="num">20건</div><div class="lbl">참여 연구과제</div></div>
       <div class="stat"><div class="num">8편</div><div class="lbl">국제 · 국내 논문</div></div>
     </div>
@@ -605,5 +605,27 @@ footer h2 em{ font-style:normal; color:var(--navy); }
   </div>
 </footer>
 
+<script>
+(function () {
+  var startDate = new Date(2022, 10, 1); // 2022년 11월 1일 (월은 0부터 시작하므로 10 = 11월)
+  var now = new Date();
+
+  var years = now.getFullYear() - startDate.getFullYear();
+  var months = now.getMonth() - startDate.getMonth();
+
+  if (now.getDate() < startDate.getDate()) {
+    months -= 1;
+  }
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+
+  var text = years + "년 " + months + "개월";
+  var el = document.getElementById("career-duration");
+  if (el) el.textContent = text;
+})();
+</script>
+
 </body>
-</html>
+</html>class="avatar"
