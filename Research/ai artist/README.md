@@ -1,6 +1,6 @@
 # Remember the Fan, Protect the Persona
 
-> 팬을 기억하되, 페르소나는 지키는 AI 아티스트 메모리 · **연구 진행 중**
+> 팬을 기억하되, 페르소나는 지키는 AI 아티스트 메모리 · **연구 진행 중(2026.10.02ver)**
 
 ![팬의 거짓말이 AI 아티스트의 설정이 되는 문제](assets/problem.png)
 
