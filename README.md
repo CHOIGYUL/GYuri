@@ -1,4 +1,4 @@
-# 최규리 · Gyuri Choi
+# Gyuri Choi
 
 **AI Engineer · LLM Evaluation & Domain Adaptation**
 
